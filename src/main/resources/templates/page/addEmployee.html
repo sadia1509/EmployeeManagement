@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Employee</title>
+
+    <!-- Include Bootstrap JS and optional dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Include Bootstrap DatePicker JS -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+    <!-- jQuery and Ajax -->
+    <script src="/js/addEmployee.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <base href="/web/">
+</head>
+
+<body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div th:replace="~{fragment/sidebar :: sidebar}" />
+        <div class="container mt-5">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="mb-0">Add Employee</h2>
+                </div>
+                <div class="card-body">
+                    <form id="addEmployeeForm" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" class="form-control" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" name="lastName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mobile">Mobile</label>
+                            <input type="text" class="form-control" id="mobile" name="mobile" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dateOfBirth">Date of Birth</label>
+                            <input type="text" class="form-control datepicker" id="dateOfBirth" name="dateOfBirth"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="photo">Photo</label>
+                            <input type="file" class="form-control" id="photo" name="photo" accept="image/*">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Employee</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div th:replace="~{fragment/footer :: footer}" />
+
+</body>
+
+</html>

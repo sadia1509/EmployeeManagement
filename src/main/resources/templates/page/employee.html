@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management</title>
+
+    <!-- Include Bootstrap JS and optional dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- jQuery and Ajex -->
+    <script src="/js/employee.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <base href="/web/">
+</head>
+
+<body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div th:replace="~{fragment/sidebar :: sidebar}" />
+
+        <!-- Page Content -->
+        <div class="content">
+            <!-- Top search bar -->
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    <input type="text" id="searchName" placeholder="Name">
+                    <input type="date" id="searchDOB">
+                    <input type="text" id="searchEmail" placeholder="Email">
+                    <input type="text" id="searchMobile" placeholder="Mobile">
+                    <button id="searchButton">Search</button>
+                </div>
+            </div>
+
+            <!-- Employee Table -->
+            <div class="row mt-4">
+                <div class="col">
+                    <table class="table table-striped">
+                        <!-- Table header -->
+                        <thead>
+                            <tr>
+                                <th>Photo</th>
+                                <th>Full Name
+                                    <button class="btn btn-sm btn-info sort-btn" data-column="fullName"
+                                        data-direction="asc">
+                                        <i class="fas fa-sort"></i>
+                                    </button>
+                                </th>
+                                <th>Email
+                                    <button class="btn btn-sm btn-info sort-btn" data-column="email"
+                                        data-direction="asc">
+                                        <i class="fas fa-sort"></i>
+                                    </button>
+                                </th>
+                                <th>Mobile
+                                    <button class="btn btn-sm btn-info sort-btn" data-column="mobile"
+                                        data-direction="asc">
+                                        <i class="fas fa-sort"></i>
+                                    </button>
+                                </th>
+                                <th>Date of Birth
+                                    <button class="btn btn-sm btn-info sort-btn" data-column="dateOfBirth"
+                                        data-direction="asc">
+                                        <i class="fas fa-sort"></i>
+                                    </button>
+                                </th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="employeeTable">
+                            <!-- Table rows will be dynamically inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div th:replace="~{fragment/modalEmployeeEdit :: modalEmployeeEdit}" />
+
+            <!-- Pagination -->
+            <div class="row">
+                <div class="col">
+                    <!-- Pagination controls -->
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <!-- Pagination items will be dynamically inserted here -->
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div th:replace="~{fragment/pagination :: pagination}" />
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div th:replace="~{fragment/footer :: footer}" />
+
+</body>
+
+</html>

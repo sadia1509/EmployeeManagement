@@ -1,0 +1,63 @@
+ /* Custom styles here */
+ .sidebar {
+     width: 200px;
+     background-color: #f8f9fa;
+     padding: 15px;
+     position: fixed;
+     height: 100%;
+ }
+
+ .sidebar a {
+     display: block;
+     padding: 10px;
+     color: #000;
+     text-decoration: none;
+ }
+
+ .sidebar a:hover {
+     background-color: #ddd;
+ }
+
+ .content {
+     margin-left: 220px;
+     /* Adjust margin for sidebar */
+     padding: 20px;
+ }
+
+ .centeredDiv {
+     display: flex;
+     justify-content: center;
+     /* Center horizontally */
+     align-items: center;
+     /* Center vertically */
+     height: 100vh;
+     /* Full viewport height */
+     text-align: center;
+     /* Center text horizontally */
+ }
+
+ /* Custom styles for card alignment */
+ .container {
+     margin-left: 200px;
+     /* Adjust margin to match sidebar width */
+ }
+
+ .card {
+     margin-top: 20px;
+     /* Optional: Add some spacing from the top */
+ }
+
+ /* Pagination control styles */
+ #pagination-controls {
+     display: flex;
+     justify-content: space-between;
+     /* Distributes space between the divs */
+     flex-wrap: nowrap;
+     /* Prevents wrapping of pagination controls */
+     gap: 10px;
+     /* Adjust gap to ensure items fit within the container */
+     padding-right: 10px;
+     /* Optional: Adds padding to prevent overflow */
+     box-sizing: border-box;
+     /* Ensures padding is included in the width calculation */
+ }
